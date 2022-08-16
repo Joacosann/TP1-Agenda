@@ -23,8 +23,10 @@ public class Controlador implements ActionListener
 			this.vista.getBtnAgregar().addActionListener(a->ventanaAgregarPersona(a));
 			this.vista.getBtnBorrar().addActionListener(s->borrarPersona(s));
 			this.vista.getBtnReporte().addActionListener(r->mostrarReporte(r));
+			
 			this.ventanaPersona = VentanaPersona.getInstance();
 			this.ventanaPersona.getBtnAgregarPersona().addActionListener(p->guardarPersona(p));
+			
 			this.agenda = agenda;
 		}
 		
@@ -33,9 +35,11 @@ public class Controlador implements ActionListener
 		}
 
 		private void guardarPersona(ActionEvent p) {
+			//toma las variables y las setea en una PersonaDTO
 			String nombre = this.ventanaPersona.getTxtNombre().getText();
 			String tel = ventanaPersona.getTxtTelefono().getText();
 			PersonaDTO nuevaPersona = new PersonaDTO(0, nombre, tel);
+			
 			this.agenda.agregarPersona(nuevaPersona);
 			this.refrescarTabla();
 			this.ventanaPersona.cerrar();
@@ -65,7 +69,9 @@ public class Controlador implements ActionListener
 		
 		private void refrescarTabla()
 		{
+			//obtiene una list de personasDTO leyendola de la base de datos
 			this.personasEnTabla = agenda.obtenerPersonas();
+			//hace visible la tabla actualizada
 			this.vista.llenarTabla(this.personasEnTabla);
 		}
 

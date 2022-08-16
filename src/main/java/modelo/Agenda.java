@@ -25,6 +25,7 @@ public class Agenda
 		this.persona.delete(persona_a_eliminar);
 	}
 	
+	//hace un readAll()
 	public List<PersonaDTO> obtenerPersonas()
 	{
 		return this.persona.readAll();		

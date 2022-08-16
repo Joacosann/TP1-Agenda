@@ -131,6 +131,7 @@ public class Vista
 	public void llenarTabla(List<PersonaDTO> personasEnTabla) {
 		this.getModelPersonas().setRowCount(0); //Para vaciar la tabla
 		this.getModelPersonas().setColumnCount(0);
+		//setea el nombre de las columnas
 		this.getModelPersonas().setColumnIdentifiers(this.getNombreColumnas());
 
 		for (PersonaDTO p : personasEnTabla)
@@ -138,6 +139,8 @@ public class Vista
 			String nombre = p.getNombre();
 			String tel = p.getTelefono();
 			Object[] fila = {nombre, tel};
+			/*Añade una fila al final del modelo. La nueva fila contendrá valores nulos a menos que
+			se especifique rowData. Se generará una notificación de la fila que se agregará.*/
 			this.getModelPersonas().addRow(fila);
 		}
 		
