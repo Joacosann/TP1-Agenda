@@ -69,7 +69,7 @@ CREATE TABLE `personas`
   `nombre` varchar(45) NOT NULL,
   `telefono` varchar(20) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `fecha_Cumpleaños` varchar(10) DEFAULT NULL,
+  `fecha_cumpleaños` varchar(10) DEFAULT NULL,
 
   PRIMARY KEY (`id_persona`),
   FOREIGN KEY(`id_tipo_contacto`) REFERENCES `tipos_contacto`(`id_tipo_contacto`),
