@@ -25,8 +25,9 @@ public class Vista
 	private JButton btnBorrar;
 	private JButton btnReporte;
 	private DefaultTableModel modelPersonas;
-	private  String[] nombreColumnas = {"Nombre y apellido","Telefono"};
+	private  String[] nombreColumnas = {"Nombre y apellido","Telefono", "Fecha de cumpleaños, Email"};
 
+	
 	public Vista() 
 	{
 		super();
@@ -138,7 +139,10 @@ public class Vista
 		{
 			String nombre = p.getNombre();
 			String tel = p.getTelefono();
-			Object[] fila = {nombre, tel};
+			String fecha_cumpleaños = p.getFecha_cumpleaños();
+			String email = p.getEmail();
+			Object[] fila = {nombre, tel, fecha_cumpleaños, email};
+			
 			/*Añade una fila al final del modelo. La nueva fila contendrá valores nulos a menos que
 			se especifique rowData. Se generará una notificación de la fila que se agregará.*/
 			this.getModelPersonas().addRow(fila);

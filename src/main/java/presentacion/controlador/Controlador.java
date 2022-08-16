@@ -38,7 +38,9 @@ public class Controlador implements ActionListener
 			//toma las variables y las setea en una PersonaDTO
 			String nombre = this.ventanaPersona.getTxtNombre().getText();
 			String tel = ventanaPersona.getTxtTelefono().getText();
-			PersonaDTO nuevaPersona = new PersonaDTO(0, nombre, tel);
+			String email = ventanaPersona.getTxtEmail().getText();
+			String fecha_cumpleaños = ventanaPersona.getTxtFechaCumpleaños().getText();
+			PersonaDTO nuevaPersona = new PersonaDTO(0, 0, 0, nombre, tel, email, fecha_cumpleaños);
 			
 			this.agenda.agregarPersona(nuevaPersona);
 			this.refrescarTabla();
