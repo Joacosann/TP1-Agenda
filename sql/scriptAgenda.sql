@@ -76,3 +76,7 @@ CREATE TABLE `personas`
   FOREIGN KEY(`id_direccion`) REFERENCES `direccion`(`id_direccion`)
 
 );
+
+INSERT INTO tipos_contacto(id_tipo_contacto, tipo) VALUES (1, "Amigos");
+INSERT INTO tipos_contacto(id_tipo_contacto, tipo) VALUES (2, "Trabajo");
+INSERT INTO tipos_contacto(id_tipo_contacto, tipo) VALUES (3, "Familia");
